@@ -4,20 +4,33 @@ using UnityEngine;
 
 public class TruckSpawner : MonoBehaviour
 {
-    public bool canSpawn = true;
+    public bool canSpawn;
     public GameObject truckPrefab;
     public List<Transform> TruckSpawnPositions = new List<Transform>();
-    public float timeBetweenSpawns;
+    //public float timeBetweenSpawns;
     private List<GameObject> truckList = new List<GameObject>(); // 5
     
 
     private void SpawnTruck()
     {
         //Vector3 randomPosition = FruitSpawnPositions[Random.Range(0, FruitSpawnPositions.Count)].position; // 1
-        Vector3 spawnPosition = TruckSpawnPositions[0].position;
-        GameObject truck = Instantiate(truckPrefab, spawnPosition, truckPrefab.transform.rotation); // 2
-        truckList.Add(truck); // 3
-        truck.GetComponent<Truck>().SetSpawner(this); // 4
+        if (canSpawn)
+        {
+            Vector3 spawnPosition = TruckSpawnPositions[0].position;
+            GameObject truck = Instantiate(truckPrefab, spawnPosition, truckPrefab.transform.rotation); // 2
+            truckList.Add(truck); // 3
+            truck.GetComponent<Truck>().SetSpawner(this); // 4
+            canSpawn = false;
+        }
+        
+    }
+
+    private void NumberOfTrucks()
+    {
+        if (truckList.Count < 1)
+        {
+            SpawnTruck();
+        }
     }
     /*
     private void NumberOfApples()
@@ -27,20 +40,24 @@ public class TruckSpawner : MonoBehaviour
             SpawnFruit();
         }
     }
-    */
+    
 
     private IEnumerator SpawnRoutine() // 1
     {
         while (canSpawn) // 2
         {
             SpawnTruck(); // 3
-            yield return new WaitForSeconds(timeBetweenSpawns); // 4
+            Debug.Log("Cuenta");
+            //yield return new WaitForSeconds(timeBetweenSpawns); // 4
+            canSpawn = false;
         }
     }
-    
-    public void RemoveFruitFromList(GameObject truck)
+    */
+
+    public void RemoveTruckFromList(GameObject truck)
     {
         truckList.Remove(truck);
+        canSpawn = true;
     }
     public void DestroyAllFruit()
     {
@@ -61,6 +78,6 @@ public class TruckSpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        SpawnRoutine();
+        NumberOfTrucks();
     }
 }
