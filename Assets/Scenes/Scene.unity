@@ -2785,14 +2785,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8af144a228c0cc409d47d3e6bbb5192, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enableTracking: 0
+  enableTracking: 1
   numberOfPlayers: 2
   enableYAxis: 1
   players:
   - {fileID: 1440896347}
   - {fileID: 1471923275}
-  - {fileID: 1865111049}
-  - {fileID: 1264190555}
   trackingInterface: {fileID: 220600112}
   scaleText: {fileID: 1866559965}
   sheerXText: {fileID: 1425858000}
@@ -3583,7 +3581,6 @@ MonoBehaviour:
   truckPrefab: {fileID: 5897017996616945721, guid: 7d367a9b5e591364c9fb0ebd50b87f56, type: 3}
   TruckSpawnPositions:
   - {fileID: 1522672359}
-  timeBetweenSpawns: 0.5
 --- !u!1001 &816243211
 PrefabInstance:
   m_ObjectHideFlags: 0
