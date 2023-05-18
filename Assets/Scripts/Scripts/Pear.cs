@@ -21,11 +21,20 @@ public class Pear : MonoBehaviour
     {
         pearSpawner = spawner;
     }
-    private void HitByPlayer(Collider other)
+
+    private void HitByPlayer()
     {
-        if (other.CompareTag(tagFilter))
+        pearSpawner.RemoveFruitFromList(gameObject);
+
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Player"))
         {
             Destroy(gameObject);
+            HitByPlayer();
         }
+
     }
 }

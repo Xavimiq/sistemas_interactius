@@ -35,6 +35,7 @@ public class PearSpawner : MonoBehaviour
     {
         if(pearList.Count < numberOfPears)
         {
+            Debug.Log("Less pears than permited");
             SpawnFruit();
         }
     }

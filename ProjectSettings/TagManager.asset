@@ -9,6 +9,7 @@ TagManager:
   - enemy
   - fruit
   - box
+  - DestroyTruck
   layers:
   - Default
   - TransparentFX

@@ -6,10 +6,16 @@ public class Apple : MonoBehaviour
 {
     public string tagFilter;
     private AppleSpawner appleSpawner;
+
     // Start is called before the first frame update
     void Start()
     {
- 
+
+    }
+
+    public void SetSpawner(AppleSpawner spawner)
+    {
+        appleSpawner = spawner;
     }
 
     // Update is called once per frame
@@ -18,16 +24,21 @@ public class Apple : MonoBehaviour
         
     }
 
-
-    public void SetSpawner(AppleSpawner spawner)
+    private void HitByPlayer()
     {
-        appleSpawner = spawner;
+        appleSpawner.RemoveFruitFromList(gameObject);
+        
     }
-    private void HitByPlayer(Collider other)
+
+    private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag(tagFilter))
+        if (other.CompareTag("Player"))
         {
             Destroy(gameObject);
+            HitByPlayer();
         }
+      
     }
+
+    
 }
