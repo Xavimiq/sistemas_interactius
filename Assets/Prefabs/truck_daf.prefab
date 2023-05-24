@@ -755,7 +755,7 @@ GameObject:
   - component: {fileID: 1806305823707880777}
   m_Layer: 0
   m_Name: truck_daf
-  m_TagString: Untagged
+  m_TagString: Truck
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -815,7 +815,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movementSpeed: 20
-  horizontalBoundary: 22
 --- !u!114 &5897017996616945716
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -5,18 +5,8 @@ using UnityEngine;
 public class Pear : MonoBehaviour
 {
     private PearSpawner pearSpawner;
-    public string tagFilter;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    //public string tagFilter;
+ 
     public void SetSpawner(PearSpawner spawner)
     {
         pearSpawner = spawner;
@@ -30,7 +20,7 @@ public class Pear : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Player1") || other.CompareTag("Player2"))
         {
             Destroy(gameObject);
             HitByPlayer();

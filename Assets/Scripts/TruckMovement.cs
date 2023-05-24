@@ -41,7 +41,7 @@ public class TruckMovement : MonoBehaviour
     
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Basket"))
         {
             detention = true;
             shouldMove = true; // Permitir que el camión se mueva nuevamente después de la colisión con el objeto "cesto"

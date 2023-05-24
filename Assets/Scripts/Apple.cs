@@ -4,24 +4,12 @@ using UnityEngine;
 
 public class Apple : MonoBehaviour
 {
-    public string tagFilter;
+    //public string tagFilter;
     private AppleSpawner appleSpawner;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
 
     public void SetSpawner(AppleSpawner spawner)
     {
         appleSpawner = spawner;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     private void HitByPlayer()
@@ -32,7 +20,7 @@ public class Apple : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Player1") || other.CompareTag("Player2"))
         {
             Destroy(gameObject);
             HitByPlayer();
