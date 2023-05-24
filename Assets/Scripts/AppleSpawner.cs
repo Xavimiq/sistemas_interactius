@@ -19,7 +19,7 @@ public class AppleSpawner : MonoBehaviour
         Collider[] hitColliders = Physics.OverlapSphere(randomPosition, _overlapRadius);
         if (hitColliders.Length != 0)
         {
-            Debug.Log("There is a pear in this spawn spot");
+            //Debug.Log("There is a pear in this spawn spot");
             SpawnFruit();
         }
         else

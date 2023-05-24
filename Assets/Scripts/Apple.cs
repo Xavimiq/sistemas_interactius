@@ -27,7 +27,7 @@ public class Apple : MonoBehaviour
     private void HitByPlayer()
     {
         appleSpawner.RemoveFruitFromList(gameObject);
-        
+        SoundManager.Instance.PlayFruitCollectedClip();
     }
 
     private void OnTriggerEnter(Collider other)

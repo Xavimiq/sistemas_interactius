@@ -20,7 +20,7 @@ public class PearSpawner : MonoBehaviour
         Collider[] hitColliders = Physics.OverlapSphere(randomPosition, _overlapRadius);
         if (hitColliders.Length != 0)
         {
-            Debug.Log("There is an apple in this spawn spot");
+            //Debug.Log("There is an apple in this spawn spot");
             SpawnFruit();
         }
         else
@@ -35,7 +35,7 @@ public class PearSpawner : MonoBehaviour
     {
         if(pearList.Count < numberOfPears)
         {
-            Debug.Log("Less pears than permited");
+            //Debug.Log("Less pears than permited");
             SpawnFruit();
         }
     }

@@ -25,7 +25,7 @@ public class Pear : MonoBehaviour
     private void HitByPlayer()
     {
         pearSpawner.RemoveFruitFromList(gameObject);
-
+        SoundManager.Instance.PlayFruitCollectedClip();
     }
 
     private void OnTriggerEnter(Collider other)

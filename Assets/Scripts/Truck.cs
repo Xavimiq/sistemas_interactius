@@ -5,6 +5,7 @@ using UnityEngine;
 public class Truck : MonoBehaviour
 {
     private TruckSpawner truckSpawner;
+    public string tagFilter;
     // Start is called before the first frame update
     void Start()
     {
@@ -14,11 +15,23 @@ public class Truck : MonoBehaviour
     public void SetSpawner(TruckSpawner spawner)
     {
         truckSpawner = spawner;
+        SoundManager.Instance.PlayTruckClip();
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag(tagFilter))
+        {
+            Destroy(gameObject);
+            truckSpawner.RemoveTruckFromList(gameObject);
+            SoundManager.Instance.StopTruckClip();
+
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 }

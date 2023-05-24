@@ -2,24 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerMovement : MonoBehaviour
+public class Forest : MonoBehaviour
 {
-    [SerializeField] int playerIndex;
     // Start is called before the first frame update
     void Start()
     {
-        
+        SoundManager.Instance.PlayForestClip();
     }
 
     // Update is called once per frame
     void Update()
     {
         
-    }
-
-    public void setPosition(Vector3 pos)
-    {
-        //swith playerIndex
-        transform.position = pos;
     }
 }
