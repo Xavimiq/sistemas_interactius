@@ -1323,12 +1323,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 177139034}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 51.757275, y: 6.9999237, z: 47.433228}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 17
+  m_Father: {fileID: 372097360}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &185534725
 GameObject:
@@ -1467,6 +1467,70 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1 &240873973
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 240873974}
+  - component: {fileID: 240873975}
+  m_Layer: 0
+  m_Name: Pear Spawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &240873974
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 240873973}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 372097360}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &240873975
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 240873973}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5eea11d3e1618743bdf829c6abef311, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canSpawn: 1
+  carryingOn: 0
+  pearPrefab: {fileID: 6334955695281240735, guid: ef1604bb55df3f6489e5b19f3da0e1f0, type: 3}
+  FruitSpawnPositions:
+  - {fileID: 435906396}
+  - {fileID: 93087717}
+  - {fileID: 131271529}
+  - {fileID: 1308701814}
+  - {fileID: 701799794}
+  - {fileID: 1007088524}
+  - {fileID: 1910365960}
+  - {fileID: 1689693239}
+  - {fileID: 431120220}
+  - {fileID: 18009049}
+  - {fileID: 1209433098}
+  - {fileID: 1152891339}
+  - {fileID: 2114112146}
+  - {fileID: 344406239}
+  - {fileID: 1512441878}
+  - {fileID: 1212635545}
+  numberOfPears: 1
 --- !u!1 &246456112
 GameObject:
   m_ObjectHideFlags: 0
@@ -1630,7 +1694,7 @@ Transform:
   m_Children:
   - {fileID: 1522672359}
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &295695988
 GameObject:
@@ -1970,6 +2034,56 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 334404352}
   m_CullTransparentMesh: 1
+--- !u!1 &339764064
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 339764065}
+  - component: {fileID: 339764066}
+  m_Layer: 0
+  m_Name: GameStateManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &339764065
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 339764064}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1746146280}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &339764066
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 339764064}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70ef1b3e79c4c2c4281362e24e6f8a32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  appleCollected: 0
+  pearCollected: 0
+  appleCollectedBeforeTruckAppears: 1
+  pearsCollectedBeforeTruckAppears: 1
+  appleSpawner: {fileID: 1965629513}
+  pearSpawner: {fileID: 240873975}
+  truckSpawner: {fileID: 794385997}
 --- !u!1 &342261390
 GameObject:
   m_ObjectHideFlags: 0
@@ -2197,6 +2311,40 @@ Transform:
   m_Children: []
   m_Father: {fileID: 11293167}
   m_RootOrder: 13
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &372097359
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 372097360}
+  m_Layer: 0
+  m_Name: Spawners
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &372097360
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 372097359}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 177139036}
+  - {fileID: 1965629512}
+  - {fileID: 794385996}
+  - {fileID: 240873974}
+  m_Father: {fileID: 0}
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &392176227
 GameObject:
@@ -2864,7 +3012,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8af144a228c0cc409d47d3e6bbb5192, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enableTracking: 1
+  enableTracking: 0
   numberOfPlayers: 2
   enableYAxis: 0
   players:
@@ -3599,11 +3747,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 794385995}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 49.69783, y: -0.1760273, z: 45.391823}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_Father: {fileID: 372097360}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &794385997
 MonoBehaviour:
@@ -3618,10 +3766,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isSpawning: 0
+  canSpawn: 0
   truckPrefab: {fileID: 5897017996616945721, guid: 7d367a9b5e591364c9fb0ebd50b87f56, type: 3}
   TruckSpawnPositions:
   - {fileID: 1522672359}
-  timeBetweenSpawns: 20
+  timeBetweenSpawns: 0
 --- !u!1001 &816243211
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3722,8 +3871,19 @@ Transform:
   - {fileID: 526420653}
   - {fileID: 1171919361}
   m_Father: {fileID: 0}
-  m_RootOrder: 16
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &845348251 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5943115739950918649, guid: 1292767610e9a2647823d872ac72e048, type: 3}
+  m_PrefabInstance: {fileID: 1620338784}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &851948343
 GameObject:
   m_ObjectHideFlags: 0
@@ -4202,6 +4362,52 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 9ab59fc696798114888ba88d6c17267d, type: 3}
   m_PrefabInstance: {fileID: 816243211}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1080194887
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1080194888}
+  - component: {fileID: 1080194889}
+  m_Layer: 0
+  m_Name: UI Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1080194888
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1080194887}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1746146280}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1080194889
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1080194887}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b080c2d6bea29fc4e9d78c1adc67e48c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  appleCollectedText: {fileID: 1467453791}
+  pearCollectedText: {fileID: 845348251}
+  gameOverWindow: {fileID: 0}
 --- !u!1001 &1135509534
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5836,6 +6042,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1455017433}
   m_CullTransparentMesh: 1
+--- !u!114 &1467453791 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5943115739950918650, guid: 1292767610e9a2647823d872ac72e048, type: 3}
+  m_PrefabInstance: {fileID: 1620338784}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1471137151
 GameObject:
   m_ObjectHideFlags: 0
@@ -7409,102 +7626,103 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1613995031}
   m_CullTransparentMesh: 1
---- !u!1 &1636759163
-GameObject:
+--- !u!1001 &1620338784
+PrefabInstance:
   m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1636759165}
-  - component: {fileID: 1636759164}
-  - component: {fileID: 1636759166}
-  m_Layer: 0
-  m_Name: Fruit Spawner
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1636759164
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1636759163}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f52b109ee2224534f96c520b63b2e34a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  canSpawn: 1
-  applePrefab: {fileID: 1702053356193915223, guid: 1577ef2789ebc1840acbfcb7402cf4af, type: 3}
-  FruitSpawnPositions:
-  - {fileID: 435906396}
-  - {fileID: 93087717}
-  - {fileID: 131271529}
-  - {fileID: 1308701814}
-  - {fileID: 701799794}
-  - {fileID: 1007088524}
-  - {fileID: 1910365960}
-  - {fileID: 1689693239}
-  - {fileID: 431120220}
-  - {fileID: 18009049}
-  - {fileID: 1209433098}
-  - {fileID: 1152891339}
-  - {fileID: 2114112146}
-  - {fileID: 344406239}
-  - {fileID: 1512441878}
-  - {fileID: 1212635545}
-  numberOfApples: 1
---- !u!4 &1636759165
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1636759163}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 84.2669, y: 7, z: 15.849998}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 11
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1636759166
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1636759163}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e5eea11d3e1618743bdf829c6abef311, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  canSpawn: 1
-  pearPrefab: {fileID: 6334955695281240735, guid: ef1604bb55df3f6489e5b19f3da0e1f0, type: 3}
-  FruitSpawnPositions:
-  - {fileID: 435906396}
-  - {fileID: 93087717}
-  - {fileID: 131271529}
-  - {fileID: 1308701814}
-  - {fileID: 701799794}
-  - {fileID: 1007088524}
-  - {fileID: 1910365960}
-  - {fileID: 1689693239}
-  - {fileID: 431120220}
-  - {fileID: 18009049}
-  - {fileID: 1209433098}
-  - {fileID: 1152891339}
-  - {fileID: 2114112146}
-  - {fileID: 344406239}
-  - {fileID: 1512441878}
-  - {fileID: 1212635545}
-  numberOfPears: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5943115739807155808, guid: 1292767610e9a2647823d872ac72e048, type: 3}
+      propertyPath: m_RootOrder
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 5943115739807155808, guid: 1292767610e9a2647823d872ac72e048, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5943115739807155808, guid: 1292767610e9a2647823d872ac72e048, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5943115739807155808, guid: 1292767610e9a2647823d872ac72e048, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5943115739807155808, guid: 1292767610e9a2647823d872ac72e048, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5943115739807155808, guid: 1292767610e9a2647823d872ac72e048, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5943115739807155808, guid: 1292767610e9a2647823d872ac72e048, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5943115739807155808, guid: 1292767610e9a2647823d872ac72e048, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5943115739807155808, guid: 1292767610e9a2647823d872ac72e048, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5943115739807155808, guid: 1292767610e9a2647823d872ac72e048, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5943115739807155808, guid: 1292767610e9a2647823d872ac72e048, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5943115739807155839, guid: 1292767610e9a2647823d872ac72e048, type: 3}
+      propertyPath: m_Name
+      value: Game UI
+      objectReference: {fileID: 0}
+    - target: {fileID: 5943115739846976295, guid: 1292767610e9a2647823d872ac72e048, type: 3}
+      propertyPath: m_Name
+      value: Apple Sprite
+      objectReference: {fileID: 0}
+    - target: {fileID: 5943115739846976296, guid: 1292767610e9a2647823d872ac72e048, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5943115739846976296, guid: 1292767610e9a2647823d872ac72e048, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5943115739846976296, guid: 1292767610e9a2647823d872ac72e048, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 180
+      objectReference: {fileID: 0}
+    - target: {fileID: 5943115741809633214, guid: 1292767610e9a2647823d872ac72e048, type: 3}
+      propertyPath: m_Name
+      value: Pear Sprite
+      objectReference: {fileID: 0}
+    - target: {fileID: 5943115741809633215, guid: 1292767610e9a2647823d872ac72e048, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5943115741809633215, guid: 1292767610e9a2647823d872ac72e048, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5943115741809633215, guid: 1292767610e9a2647823d872ac72e048, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5943115741809633215, guid: 1292767610e9a2647823d872ac72e048, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5943115741809633215, guid: 1292767610e9a2647823d872ac72e048, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 180
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 1292767610e9a2647823d872ac72e048, type: 3}
 --- !u!1 &1689693238
 GameObject:
   m_ObjectHideFlags: 0
@@ -7866,8 +8084,10 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1529842706}
+  - {fileID: 339764065}
+  - {fileID: 1080194888}
   m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1761381425 stripped
 Transform:
@@ -8951,6 +9171,70 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1927204892}
   m_CullTransparentMesh: 1
+--- !u!1 &1965629511
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1965629512}
+  - component: {fileID: 1965629513}
+  m_Layer: 0
+  m_Name: Apple Spawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1965629512
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1965629511}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 372097360}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1965629513
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1965629511}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f52b109ee2224534f96c520b63b2e34a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canSpawn: 1
+  carryingOn: 0
+  applePrefab: {fileID: 1702053356193915223, guid: 1577ef2789ebc1840acbfcb7402cf4af, type: 3}
+  FruitSpawnPositions:
+  - {fileID: 435906396}
+  - {fileID: 93087717}
+  - {fileID: 131271529}
+  - {fileID: 1308701814}
+  - {fileID: 701799794}
+  - {fileID: 1007088524}
+  - {fileID: 1910365960}
+  - {fileID: 1689693239}
+  - {fileID: 431120220}
+  - {fileID: 18009049}
+  - {fileID: 1209433098}
+  - {fileID: 1152891339}
+  - {fileID: 2114112146}
+  - {fileID: 344406239}
+  - {fileID: 1512441878}
+  - {fileID: 1212635545}
+  numberOfApples: 1
 --- !u!1 &1966654673
 GameObject:
   m_ObjectHideFlags: 0
@@ -10081,7 +10365,7 @@ Transform:
   m_Children:
   - {fileID: 1573016223}
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2114112145
 GameObject:

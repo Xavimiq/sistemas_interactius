@@ -5,10 +5,11 @@ using UnityEngine;
 public class AppleSpawner : MonoBehaviour
 {
     public bool canSpawn = true;
+    public bool carryingOn = false;
     public GameObject applePrefab;
     public List<Transform> FruitSpawnPositions = new List<Transform>();
     //public float timeBetweenSpawns;
-    public float numberOfApples;
+    public int numberOfApples;
     private List<GameObject> appleList = new List<GameObject>(); // 5
     float _overlapRadius = 1f;
 
@@ -19,13 +20,12 @@ public class AppleSpawner : MonoBehaviour
         Collider[] hitColliders = Physics.OverlapSphere(randomPosition, _overlapRadius);
         if (hitColliders.Length != 0)
         {
-            //Debug.Log("There is a pear in this spawn spot");
+            Debug.Log("There is a pear in this spawn spot");
             SpawnFruit();
         }
         else
         {
-            GameObject apple = Instantiate(applePrefab, randomPosition,
-        applePrefab.transform.rotation); // 2
+            GameObject apple = Instantiate(applePrefab, randomPosition, applePrefab.transform.rotation); // 2
             appleList.Add(apple); // 3
             apple.GetComponent<Apple>().SetSpawner(this); // 4
         }
@@ -33,9 +33,15 @@ public class AppleSpawner : MonoBehaviour
     }
     private void NumberOfApples()
     {
-        if (appleList.Count < numberOfApples)
-        {
-            SpawnFruit();
+        if (canSpawn) {      
+            if (!carryingOn)
+            {
+                if (appleList.Count < numberOfApples)
+                {
+                    Debug.Log("Spawneo");
+                    SpawnFruit();
+                }
+            }
         }
     }
     /*
