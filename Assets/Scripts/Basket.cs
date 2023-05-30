@@ -7,15 +7,15 @@ public class Basket : MonoBehaviour
     //public string tagFilter;
     private BasketSpawner basketSpawner;
 
-    public void SetSpawner(BasketSpawner spawner)
+    public void SetSpawner(BasketSpawner spawner1)
     {
-        basketSpawner = spawner;
+        basketSpawner = spawner1;
     }
 
     private void HitByTruck()
     {
         basketSpawner.RemoveFruitFromList(gameObject);
-        
+        GameStateManager.Instance.ResetCounters();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -25,6 +25,5 @@ public class Basket : MonoBehaviour
             Destroy(gameObject);
             HitByTruck();
         }
-
     }
 }

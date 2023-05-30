@@ -20,7 +20,7 @@ public class Truck : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag(tagFilter))
+        if (other.CompareTag("DestroyTruck"))
         {
             Destroy(gameObject);
             truckSpawner.RemoveTruckFromList(gameObject);

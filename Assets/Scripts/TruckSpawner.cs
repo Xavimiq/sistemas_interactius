@@ -5,9 +5,10 @@ using UnityEngine;
 public class TruckSpawner : MonoBehaviour
 {
     public bool isSpawning = false;
+    public bool canSpawn = false;
     public GameObject truckPrefab;
     public List<Transform> TruckSpawnPositions = new List<Transform>();
-    public float timeBetweenSpawns;
+    public float timeBetweenSpawns = 0;
     private List<GameObject> truckList = new List<GameObject>(); // 5
     
 
@@ -17,17 +18,20 @@ public class TruckSpawner : MonoBehaviour
         GameObject truck = Instantiate(truckPrefab, spawnPosition, truckPrefab.transform.rotation); // 2
         truckList.Add(truck); // 3
         truck.GetComponent<Truck>().SetSpawner(this); // 4
+        canSpawn = false;
         isSpawning = false;
     }
 
     private void NumberOfTrucks()
     {
-        if (truckList.Count < 1 && !isSpawning)
+        if (canSpawn)
         {
-            isSpawning = true;
-            Invoke("SpawnTruck", timeBetweenSpawns);
+            if (truckList.Count < 1 && !isSpawning)
+            {
+                isSpawning = true;
+                Invoke("SpawnTruck", timeBetweenSpawns);
+            }
         }
-        
     }
     
     public void RemoveTruckFromList(GameObject truck)
