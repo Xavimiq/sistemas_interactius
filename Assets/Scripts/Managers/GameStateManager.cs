@@ -8,13 +8,15 @@ public class GameStateManager : MonoBehaviour
     public static GameStateManager Instance; // 1
 
     [HideInInspector]
-    public int appleCollected; // 2
+    public int appleCollected;
+    [HideInInspector]
+    public int appleObjective;
 
     [HideInInspector]
-    public int pearCollected; // 3
+    public int pearCollected;
+    [HideInInspector]
+    public int pearObjective;
 
-    public int appleCollectedBeforeTruckAppears;
-    public int pearsCollectedBeforeTruckAppears;
     public AppleSpawner appleSpawner;
     public PearSpawner pearSpawner;
     public TruckSpawner truckSpawner;
@@ -23,7 +25,14 @@ public class GameStateManager : MonoBehaviour
     void Awake()
     {
         Instance = this;
-
+        
+    }
+    void Start()
+    {
+        appleObjective = Random.Range(1, 4);
+        pearObjective = Random.Range(1, 4);
+        UIManager.Instance.UpdateObjectiveApples();
+        UIManager.Instance.UpdateObjectivePears();
     }
     public void ResetCounters()
     {
@@ -33,13 +42,17 @@ public class GameStateManager : MonoBehaviour
         pearSpawner.canSpawn = true;
         UIManager.Instance.UpdateCollectedApples();
         UIManager.Instance.UpdateCollectedPears();
+        appleObjective = Random.Range(1, 4);
+        pearObjective = Random.Range(1, 4);
+        UIManager.Instance.UpdateObjectiveApples();
+        UIManager.Instance.UpdateObjectivePears();
     }
     public void CollectedApples()
     {
         appleCollected++;
         
         Debug.Log("apple collected");
-        if (appleCollected == appleCollectedBeforeTruckAppears)
+        if (appleCollected == appleObjective)
         {
             StopSpawnApples();
             CheckIfSpawnsTruck();
@@ -50,7 +63,7 @@ public class GameStateManager : MonoBehaviour
     {
         pearCollected++;
         Debug.Log("pear collected");
-        if (pearCollected == pearsCollectedBeforeTruckAppears)
+        if (pearCollected == pearObjective)
         {
             StopSpawnPears();
             CheckIfSpawnsTruck();
@@ -59,7 +72,7 @@ public class GameStateManager : MonoBehaviour
     }
     private void CheckIfSpawnsTruck()
     {
-        if (appleCollected == appleCollectedBeforeTruckAppears && pearCollected == pearsCollectedBeforeTruckAppears)
+        if (appleCollected == appleObjective && pearCollected == pearObjective)
         {
             TruckAppears();
         }
