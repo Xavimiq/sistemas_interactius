@@ -15,6 +15,24 @@ TagManager:
   - Basket
   - Truck
   - Exit
+  - Tree1
+  - Tree2
+  - Tree3
+  - Tree4
+  - Tree5
+  - Tree6
+  - Tree7
+  - Tree8
+  - Tree9
+  - Tree10
+  - Tree11
+  - Tree12
+  - Tree13
+  - Tree14
+  - Tree15
+  - Tree16
+  - Pear
+  - Apple
   layers:
   - Default
   - TransparentFX

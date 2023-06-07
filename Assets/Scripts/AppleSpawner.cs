@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class AppleSpawner : MonoBehaviour
 {
-    public bool canSpawn = true;
+    public bool canSpawn = false;
     public bool carryingOn = false;
     public GameObject applePrefab;
     public List<Transform> FruitSpawnPositions = new List<Transform>();
@@ -13,19 +13,31 @@ public class AppleSpawner : MonoBehaviour
     private List<GameObject> appleList = new List<GameObject>(); // 5
     float _overlapRadius = 1f;
 
+    private void Awake()
+    {
+        canSpawn = false;
+    }
+
     private void SpawnFruit()
     {
-        Vector3 randomPosition = FruitSpawnPositions[Random.Range(0,
-        FruitSpawnPositions.Count)].position; // 1
+        Vector3 randomPosition = FruitSpawnPositions[Random.Range(0, FruitSpawnPositions.Count)].position; // 1
         Collider[] hitColliders = Physics.OverlapSphere(randomPosition, _overlapRadius);
-        if (hitColliders.Length != 0)
+        bool isFruitPresent = false;
+
+        foreach (Collider collider in hitColliders)
         {
-            Debug.Log("There is a pear in this spawn spot");
-            SpawnFruit();
+            if (collider.CompareTag("fruit"))
+            {
+                isFruitPresent = true;
+                Debug.Log("There is a pear in this spawn spot");
+                SpawnFruit();
+                break;
+            }
         }
-        else
+        if (!isFruitPresent)
         {
             GameObject apple = Instantiate(applePrefab, randomPosition, applePrefab.transform.rotation); // 2
+            //currentApple = apple;
             appleList.Add(apple); // 3
             apple.GetComponent<Apple>().SetSpawner(this); // 4
         }
@@ -44,6 +56,18 @@ public class AppleSpawner : MonoBehaviour
             }
         }
     }
+
+    //public void CheckTreeCollision(GameObject player)
+    //{
+    //    if(currentApple != null)
+    //    {
+    //        Apple apple = currentApple.GetComponent<Apple>();
+    //        if(apple != null && apple.IsCarried() && apple.carryingPlayer == player)
+    //        {
+    //            apple.ResetApple();
+    //        }
+    //    }
+    //}
     /*
     private IEnumerator SpawnRoutine() // 1
     {
@@ -68,10 +92,9 @@ public class AppleSpawner : MonoBehaviour
         appleList.Clear();
     }
 
-    // Start is called before the first frame update
-    void Start()
+    public void InitializeSpawner()
     {
-        SpawnFruit();
+        canSpawn = true;
     }
 
     // Update is called once per frame

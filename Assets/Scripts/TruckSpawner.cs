@@ -39,15 +39,6 @@ public class TruckSpawner : MonoBehaviour
         truckList.Remove(truck);
         
     }
-    public void DestroyAllFruit()
-    {
-        foreach (GameObject truck in truckList) // 1
-        {
-            Destroy(truck); // 2
-        }
-
-        truckList.Clear();
-    }
 
     // Start is called before the first frame update
     void Start()

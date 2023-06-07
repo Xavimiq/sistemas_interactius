@@ -4,46 +4,65 @@ using UnityEngine;
 
 public class Apple : MonoBehaviour
 {
-    //public string tagFilter;
     private AppleSpawner appleSpawner;
-    //public GameObject applePrefabInstance;
+    private Vector3 initialPosition;
+    private bool isCarried;
 
     public void SetSpawner(AppleSpawner spawner)
     {
         appleSpawner = spawner;
     }
 
+    private void Start()
+    {
+        initialPosition = transform.position;
+        isCarried = false;
+    }
+
     private void HitByPlayer(GameObject player)
     {
-        appleSpawner.RemoveFruitFromList(gameObject);
+        isCarried = true;
         SoundManager.Instance.PlayFruitCollectedClip();
         
         appleSpawner.carryingOn = true;
 
         gameObject.transform.position = player.transform.position;
         gameObject.transform.parent = player.transform;
-        
-        
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player1")) 
+        if (!isCarried)
         {
-            GameObject player1 = GameObject.FindGameObjectWithTag("Player1");
-            HitByPlayer(player1);
+            if (other.CompareTag("Player1"))
+            {
+                GameObject player1 = GameObject.FindGameObjectWithTag("Player1");
+                HitByPlayer(player1);
+            }
+            else if (other.CompareTag("Player2"))
+            {
+                GameObject player2 = GameObject.FindGameObjectWithTag("Player2");
+                HitByPlayer(player2);
+            }
         }
-        if (other.CompareTag("Player2"))
-        {
-            GameObject player2 = GameObject.FindGameObjectWithTag("Player2");
-            HitByPlayer(player2);
-        }
-        if (other.CompareTag("Basket"))
+        else if (other.CompareTag("Basket"))
         {
             appleSpawner.carryingOn = false;
+            appleSpawner.RemoveFruitFromList(gameObject);
             GameStateManager.Instance.CollectedApples();
-            UIManager.Instance.UpdateCollectedApples();
             Destroy(gameObject);
-            
+            isCarried = false;
+
+        }
+        else if (other.CompareTag("enemy"))
+        {
+            if (Vector3.Distance(gameObject.transform.position, initialPosition) > 10f)
+            {
+                gameObject.transform.position = initialPosition;
+                appleSpawner.carryingOn = false;
+                gameObject.transform.parent = null;
+                isCarried = false;
+            }
+
         }
     }
 }
