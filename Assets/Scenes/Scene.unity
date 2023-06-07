@@ -3147,7 +3147,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8af144a228c0cc409d47d3e6bbb5192, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enableTracking: 0
+  enableTracking: 1
   numberOfPlayers: 2
   enableYAxis: 0
   players:
@@ -10989,10 +10989,34 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1102647311052379201, guid: 1292767610e9a2647823d872ac72e048, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1102647311052379201, guid: 1292767610e9a2647823d872ac72e048, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1102647311052379201, guid: 1292767610e9a2647823d872ac72e048, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 1102647311052379201, guid: 1292767610e9a2647823d872ac72e048, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -100
+      objectReference: {fileID: 0}
+    - target: {fileID: 3321531630702885199, guid: 1292767610e9a2647823d872ac72e048, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.5
+      objectReference: {fileID: 0}
     - target: {fileID: 9162555604097273727, guid: 1292767610e9a2647823d872ac72e048, type: 3}
       propertyPath: m_Text
-      value: "Congratulations!!!\nYou Recollected All The Fruits, \nYou Saved The
-        Farmers!!"
+      value: 'Congratulations!!!
+
+        You Recollected All The Fruits
+
+        You
+        Saved The Farmers!!'
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1292767610e9a2647823d872ac72e048, type: 3}

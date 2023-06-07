@@ -20,7 +20,7 @@ public class GameStateManager : MonoBehaviour
     public AppleSpawner appleSpawner;
     public PearSpawner pearSpawner;
     public TruckSpawner truckSpawner;
-    public int level = 4;
+    public int level = 1;
 
     // Start is called before the first frame update
     void Awake()
@@ -30,7 +30,7 @@ public class GameStateManager : MonoBehaviour
 
     void Start()
     {
-        level = 4;
+        level = 1;
         GamePlay();
     }
     
