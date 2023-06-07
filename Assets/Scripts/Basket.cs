@@ -15,7 +15,12 @@ public class Basket : MonoBehaviour
     private void HitByTruck()
     {
         basketSpawner.RemoveFruitFromList(gameObject);
-        GameStateManager.Instance.ResetCounters();
+        if(GameStateManager.Instance.level != 1)
+        {
+            Crono.Instance.StopCountdown();
+        }
+        GameStateManager.Instance.level++;
+        GameStateManager.Instance.GamePlay();
     }
 
     private void OnTriggerEnter(Collider other)

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PearSpawner : MonoBehaviour
 {
-    public bool canSpawn = true;
+    public bool canSpawn = false;
     public bool carryingOn = false;
     public GameObject pearPrefab;
     public List<Transform> FruitSpawnPositions = new List<Transform>();
@@ -12,22 +12,35 @@ public class PearSpawner : MonoBehaviour
     public int numberOfPears;
     private List<GameObject> pearList = new List<GameObject>(); // 5
     float _overlapRadius = 1f;
+    
+    private void Awake()
+    {
+        canSpawn = false;
+    }
 
     private void SpawnFruit()
     {
-        Vector3 randomPosition = FruitSpawnPositions[Random.Range(0,
-        FruitSpawnPositions.Count)].position; // 1
+        Transform spawnPoint = FruitSpawnPositions[Random.Range(0, FruitSpawnPositions.Count)]; // 1
+        Vector3 randomPosition = spawnPoint.position;
         Collider[] hitColliders = Physics.OverlapSphere(randomPosition, _overlapRadius);
-        if (hitColliders.Length != 0)
+        bool isFruitPresent = false;
+
+        foreach (Collider collider in hitColliders)
         {
-            Debug.Log("There is an apple in this spawn spot");
-            SpawnFruit();
+            if (collider.CompareTag("fruit"))
+            {
+                isFruitPresent = true;
+                Debug.Log("There is an apple in this spawn spot");
+                SpawnFruit();
+                break;
+            }
         }
-        else
+        if(!isFruitPresent)
         {
             GameObject pear = Instantiate(pearPrefab, randomPosition, pearPrefab.transform.rotation); // 2
-            pearList.Add(pear); // 3
-            pear.GetComponent<Pear>().SetSpawner(this); // 4
+            pearList.Add(pear);
+            
+            pear.GetComponent<Pear>().SetSpawner(this);
         }
         
     }
@@ -38,7 +51,6 @@ public class PearSpawner : MonoBehaviour
             {
                 if (pearList.Count < numberOfPears)
                 {
-                    //Debug.Log("Less pears than permited");
                     SpawnFruit();
                 }
             }
@@ -69,11 +81,10 @@ public class PearSpawner : MonoBehaviour
         pearList.Clear();
     }
 
-    // Start is called before the first frame update
-    void Start()
+    
+    public void Spawner()
     {
-        //StartCoroutine(SpawnRoutine());
-        SpawnFruit();
+        canSpawn = true;
     }
 
     // Update is called once per frame

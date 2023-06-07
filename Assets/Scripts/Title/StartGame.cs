@@ -17,6 +17,10 @@ public class StartGame : MonoBehaviour
         Instance = this;
 
     }
+    void Start()
+    {
+        TitleSoundManager.Instance.PlayIntroClip();
+    }
     private void ChangeScene()
     {
         SceneManager.LoadScene("Scene");

@@ -34,6 +34,7 @@ public class TruckMovement : MonoBehaviour
                 {
                     shouldMove = false; // detener el camión
                     SoundManager.Instance.StopTruckClip();
+                    SoundManager.Instance.PlayHornClip();
                 }
             }            
         }
