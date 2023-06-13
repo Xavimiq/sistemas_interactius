@@ -3931,12 +3931,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4013efd1a4513014d9774ac834d653f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isSpawning: 0
   canSpawn: 0
   truckPrefab: {fileID: 5897017996616945721, guid: 7d367a9b5e591364c9fb0ebd50b87f56, type: 3}
   TruckSpawnPositions:
   - {fileID: 1522672359}
-  timeBetweenSpawns: 0
 --- !u!1001 &816243211
 PrefabInstance:
   m_ObjectHideFlags: 0

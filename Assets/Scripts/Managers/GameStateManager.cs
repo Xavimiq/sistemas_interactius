@@ -65,8 +65,13 @@ public class GameStateManager : MonoBehaviour
         UIManager.Instance.StopShowLevel1Window();
         appleSpawner.canSpawn = true;
         pearSpawner.canSpawn = true;
+<<<<<<< Updated upstream
         appleObjective = Random.Range(1, 2);
         pearObjective = Random.Range(1, 2);
+=======
+        appleObjective = 2;
+        pearObjective = 2;
+>>>>>>> Stashed changes
         UIManager.Instance.UpdateObjectiveApples();
         UIManager.Instance.UpdateObjectivePears();
     }
@@ -81,8 +86,13 @@ public class GameStateManager : MonoBehaviour
         pearSpawner.canSpawn = true;
         UIManager.Instance.UpdateCollectedApples();
         UIManager.Instance.UpdateCollectedPears();
+<<<<<<< Updated upstream
         appleObjective = Random.Range(1, 2);
         pearObjective = Random.Range(1, 2);
+=======
+        appleObjective = 3;
+        pearObjective = 3;
+>>>>>>> Stashed changes
         UIManager.Instance.UpdateObjectiveApples();
         UIManager.Instance.UpdateObjectivePears();
         Crono.Instance.StartCountdown(90);
@@ -98,11 +108,19 @@ public class GameStateManager : MonoBehaviour
         pearSpawner.canSpawn = true;
         UIManager.Instance.UpdateCollectedApples();
         UIManager.Instance.UpdateCollectedPears();
+<<<<<<< Updated upstream
         appleObjective = Random.Range(1, 2);
         pearObjective = Random.Range(1, 2);
         UIManager.Instance.UpdateObjectiveApples();
         UIManager.Instance.UpdateObjectivePears();
         Crono.Instance.StartCountdown(90);
+=======
+        appleObjective = 3;
+        pearObjective = 3;
+        UIManager.Instance.UpdateObjectiveApples();
+        UIManager.Instance.UpdateObjectivePears();
+        Crono.Instance.StartCountdown(60);
+>>>>>>> Stashed changes
     }
     private IEnumerator Level4()
     {
@@ -115,11 +133,19 @@ public class GameStateManager : MonoBehaviour
         pearSpawner.canSpawn = true;
         UIManager.Instance.UpdateCollectedApples();
         UIManager.Instance.UpdateCollectedPears();
+<<<<<<< Updated upstream
         appleObjective = Random.Range(1, 2);
         pearObjective = Random.Range(1, 2);
         UIManager.Instance.UpdateObjectiveApples();
         UIManager.Instance.UpdateObjectivePears();
         Crono.Instance.StartCountdown(90);
+=======
+        appleObjective = 3;
+        pearObjective = 3;
+        UIManager.Instance.UpdateObjectiveApples();
+        UIManager.Instance.UpdateObjectivePears();
+        Crono.Instance.StartCountdown(45);
+>>>>>>> Stashed changes
     }
     private IEnumerator Victory()
     {
