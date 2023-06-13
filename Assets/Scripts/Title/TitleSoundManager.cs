@@ -10,7 +10,6 @@ public class TitleSoundManager : MonoBehaviour
 
     private AudioSource introAudioSource;
 
-    // Start is called before the first frame update
     void Awake()
     {
         Instance = this; // 1
@@ -21,10 +20,5 @@ public class TitleSoundManager : MonoBehaviour
         introAudioSource.clip = introClip;
         introAudioSource.loop = true;
         introAudioSource.Play();
-    }
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }
