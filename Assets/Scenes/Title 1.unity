@@ -528,7 +528,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8af144a228c0cc409d47d3e6bbb5192, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enableTracking: 0
+  enableTracking: 1
   numberOfPlayers: 2
   enableYAxis: 0
   players:
@@ -5086,9 +5086,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32345310080c0694384fa12443957ae0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  model: {fileID: 1188322686}
-  normalColor: {r: 0.8666667, g: 0.45882353, b: 0.14117648, a: 0}
-  hoverColor: {r: 0.8509804, g: 0.6156863, b: 0.43529412, a: 0}
   playerInside: 0
 --- !u!1 &1207622816
 GameObject:

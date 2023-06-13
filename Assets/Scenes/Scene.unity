@@ -3150,7 +3150,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8af144a228c0cc409d47d3e6bbb5192, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enableTracking: 0
+  enableTracking: 1
   numberOfPlayers: 2
   enableYAxis: 0
   players:
@@ -7074,7 +7074,6 @@ MonoBehaviour:
   ticTacClip: {fileID: 8300000, guid: 4f53e3c985d2c4245b90abe01b67aa5a, type: 3}
   alarmClip: {fileID: 8300000, guid: 9016296f9f4c5f645a77142fe6c74c5a, type: 3}
   victoryClip: {fileID: 8300000, guid: 2ff53c235adea0c46a37bf7a95bb5be7, type: 3}
-  cronoAudioSource: {fileID: 0}
 --- !u!1 &1563017566
 GameObject:
   m_ObjectHideFlags: 0
