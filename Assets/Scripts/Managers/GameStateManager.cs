@@ -19,6 +19,7 @@ public class GameStateManager : MonoBehaviour
 
     public AppleSpawner appleSpawner;
     public PearSpawner pearSpawner;
+    public BasketSpawner basketSpawner;
     public TruckSpawner truckSpawner;
     public int level = 1;
 
@@ -27,18 +28,15 @@ public class GameStateManager : MonoBehaviour
     {
         Instance = this;        
     }
-
     void Start()
     {
         level = 1;
         GamePlay();
     }
-    
     public void GamePlay()
     {
         if(level == 1)
         {
-            Debug.Log(level);
             StartCoroutine(Level1());
         }
         else if(level == 2)
@@ -65,8 +63,8 @@ public class GameStateManager : MonoBehaviour
         UIManager.Instance.StopShowLevel1Window();
         appleSpawner.canSpawn = true;
         pearSpawner.canSpawn = true;
-        appleObjective = Random.Range(1, 2);
-        pearObjective = Random.Range(1, 2);
+        appleObjective = 1;
+        pearObjective = 1;
         UIManager.Instance.UpdateObjectiveApples();
         UIManager.Instance.UpdateObjectivePears();
     }
@@ -81,11 +79,11 @@ public class GameStateManager : MonoBehaviour
         pearSpawner.canSpawn = true;
         UIManager.Instance.UpdateCollectedApples();
         UIManager.Instance.UpdateCollectedPears();
-        appleObjective = Random.Range(1, 2);
-        pearObjective = Random.Range(1, 2);
+        appleObjective = 1;
+        pearObjective = 1;
         UIManager.Instance.UpdateObjectiveApples();
         UIManager.Instance.UpdateObjectivePears();
-        Crono.Instance.StartCountdown(90);
+        Crono.Instance.StartCountdown(75);
     }
     private IEnumerator Level3()
     {
@@ -98,11 +96,11 @@ public class GameStateManager : MonoBehaviour
         pearSpawner.canSpawn = true;
         UIManager.Instance.UpdateCollectedApples();
         UIManager.Instance.UpdateCollectedPears();
-        appleObjective = Random.Range(1, 2);
-        pearObjective = Random.Range(1, 2);
+        appleObjective = 1;
+        pearObjective = 1;
         UIManager.Instance.UpdateObjectiveApples();
         UIManager.Instance.UpdateObjectivePears();
-        Crono.Instance.StartCountdown(90);
+        Crono.Instance.StartCountdown(75);
     }
     private IEnumerator Level4()
     {
@@ -115,26 +113,28 @@ public class GameStateManager : MonoBehaviour
         pearSpawner.canSpawn = true;
         UIManager.Instance.UpdateCollectedApples();
         UIManager.Instance.UpdateCollectedPears();
-        appleObjective = Random.Range(1, 2);
-        pearObjective = Random.Range(1, 2);
+        appleObjective = 1;
+        pearObjective = 1;
         UIManager.Instance.UpdateObjectiveApples();
         UIManager.Instance.UpdateObjectivePears();
-        Crono.Instance.StartCountdown(90);
+        Crono.Instance.StartCountdown(75);
     }
     private IEnumerator Victory()
     {
+        SoundManager.Instance.PlayVictoryClip();
         UIManager.Instance.ShowVictoryWindow();
         yield return new WaitForSeconds(13f);
         UIManager.Instance.StopShowVictoryWindow();
         SceneManager.LoadScene("Title 1");
     }
-
     public void CollectedApples()
     {
         appleCollected++;
         UIManager.Instance.UpdateCollectedApples();
         if (appleCollected == appleObjective)
         {
+            GameObject basket = GameObject.FindGameObjectWithTag("Basket");
+            basketSpawner.InstantiateApple(basket);
             StopSpawnApples();
             CheckIfSpawnsTruck();
         }
@@ -146,6 +146,8 @@ public class GameStateManager : MonoBehaviour
         UIManager.Instance.UpdateCollectedPears();
         if (pearCollected == pearObjective)
         {
+            GameObject basket = GameObject.FindGameObjectWithTag("Basket");
+            basketSpawner.InstantiatePear(basket);
             StopSpawnPears();
             CheckIfSpawnsTruck();
         }
@@ -155,8 +157,18 @@ public class GameStateManager : MonoBehaviour
     {
         if (appleCollected == appleObjective && pearCollected == pearObjective)
         {
+            if(level == 1)
+            {
+                StartCoroutine(ShowTruckInformation());
+            }
             TruckAppears();
         }
+    }
+    private IEnumerator ShowTruckInformation()
+    {
+        UIManager.Instance.ShowTruckAppearsWindow();
+        yield return new WaitForSeconds(8f);
+        UIManager.Instance.StopShowTruckAppearsWindow();
     }
     private void StopSpawnApples()
     {
@@ -177,7 +189,5 @@ public class GameStateManager : MonoBehaviour
         StopSpawnApples();
         StopSpawnPears();
         UIManager.Instance.ShowGameOverWindow();
-
-    }
-    
+    } 
 }

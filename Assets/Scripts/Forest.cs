@@ -9,10 +9,4 @@ public class Forest : MonoBehaviour
     {
         SoundManager.Instance.PlayForestClip();
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
