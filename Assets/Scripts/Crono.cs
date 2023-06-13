@@ -11,7 +11,6 @@ public class Crono : MonoBehaviour
     private float countdownTime = 90f;
     private bool isCountdownActive = false;
     private Coroutine countDownCoroutine;
-
     void Awake()
     {
         Instance = this;
@@ -19,9 +18,8 @@ public class Crono : MonoBehaviour
     void Start()
     {
         gameObject.SetActive(false);
-        timerText.text = "00:00";
+        timerText.text = "00:00";        
     }
-
     public void StartCountdown(float time)
     {
         countdownTime = time;
@@ -30,14 +28,12 @@ public class Crono : MonoBehaviour
         SoundManager.Instance.PlayTicTacClip();
         countDownCoroutine = StartCoroutine(Countdown());
     }
-
     public void StopCountdown()
     {
         isCountdownActive = false;
         SoundManager.Instance.StopTicTacClip();
         StopCoroutine(countDownCoroutine);
     }
-
     private IEnumerator Countdown()
     {
         while(countdownTime > 0f)
@@ -53,7 +49,6 @@ public class Crono : MonoBehaviour
         SoundManager.Instance.PlayAlarmClip();
         GameStateManager.Instance.GameOver();
     }
-
     private void UpdateTimerDisplay(float time)
     {
         int minutes = Mathf.FloorToInt(time / 60f);

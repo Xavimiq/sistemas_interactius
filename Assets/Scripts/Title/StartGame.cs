@@ -5,39 +5,32 @@ using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 
 
+
 public class StartGame : MonoBehaviour
 {
     public static StartGame Instance;
-
+    public GameObject titleWindow;
     public bool player1Prepared = false;
     public bool player2Prepared = false;
+    public PrepareForStart prepare1;
+    public PrepareForStart2 prepare2;
 
     void Awake()
     {
         Instance = this;
-
     }
     void Start()
     {
         TitleSoundManager.Instance.PlayIntroClip();
+        titleWindow.SetActive(true);
     }
     private void ChangeScene()
     {
         SceneManager.LoadScene("Scene");
     }
-    public void PreparedPlayer1()
+    private void Update()
     {
-        player1Prepared = true;
-        CheckForStart();
-    }
-    public void PreparedPlayer2()
-    {
-        player2Prepared = true;
-        CheckForStart();
-    }
-    private void CheckForStart()
-    {
-        if(player1Prepared == true && player2Prepared == true)
+        if(prepare1.playerInside == true && prepare2.playerInside == true)
         {
             ChangeScene();
         }
