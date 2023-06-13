@@ -6,22 +6,16 @@ using UnityEngine.SceneManagement;
 
 public class PrepareForStart2 : MonoBehaviour
 {
-    public MeshRenderer model;
-    public Color normalColor;
-    public Color hoverColor;
-
     public bool playerInside;
 
     void Start()
     {
-        model.material.color = normalColor;
         playerInside = false;
     }
     private void OnTriggerEnter(Collider other)
     {
         if (!playerInside)
         {
-            model.material.color = hoverColor;
             if (other.CompareTag("Player1"))
             {
                 playerInside = true;
@@ -36,12 +30,10 @@ public class PrepareForStart2 : MonoBehaviour
     {
         if (other.CompareTag("Player1"))
         {
-            model.material.color = normalColor;
             playerInside = false;
         }
         else if (other.CompareTag("Player2"))
         {
-            model.material.color = normalColor;
             playerInside = false;
         }
     }

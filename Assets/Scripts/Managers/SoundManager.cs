@@ -18,7 +18,6 @@ public class SoundManager : MonoBehaviour
     private AudioSource truckAudioSource;
     private AudioSource forestAudioSource;
     private AudioSource ticTacAudioSource;
-    public AudioSource cronoAudioSource;
 
     void Awake()
     {
@@ -26,7 +25,6 @@ public class SoundManager : MonoBehaviour
         truckAudioSource = gameObject.AddComponent<AudioSource>();
         forestAudioSource = gameObject.AddComponent<AudioSource>();
         ticTacAudioSource = gameObject.AddComponent<AudioSource>();
-        cronoAudioSource = gameObject.GetComponent<AudioSource>();
     }    
     private void PlaySound(AudioClip clip, AudioSource audioSource) // 1
     {
