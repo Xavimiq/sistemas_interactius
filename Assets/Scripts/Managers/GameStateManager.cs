@@ -63,8 +63,8 @@ public class GameStateManager : MonoBehaviour
         UIManager.Instance.StopShowLevel1Window();
         appleSpawner.canSpawn = true;
         pearSpawner.canSpawn = true;
-        appleObjective = 1;
-        pearObjective = 1;
+        appleObjective = 2;
+        pearObjective = 2;
         UIManager.Instance.UpdateObjectiveApples();
         UIManager.Instance.UpdateObjectivePears();
     }
@@ -79,8 +79,8 @@ public class GameStateManager : MonoBehaviour
         pearSpawner.canSpawn = true;
         UIManager.Instance.UpdateCollectedApples();
         UIManager.Instance.UpdateCollectedPears();
-        appleObjective = 1;
-        pearObjective = 1;
+        appleObjective = 3;
+        pearObjective = 3;
         UIManager.Instance.UpdateObjectiveApples();
         UIManager.Instance.UpdateObjectivePears();
         Crono.Instance.StartCountdown(75);
@@ -96,11 +96,11 @@ public class GameStateManager : MonoBehaviour
         pearSpawner.canSpawn = true;
         UIManager.Instance.UpdateCollectedApples();
         UIManager.Instance.UpdateCollectedPears();
-        appleObjective = 1;
-        pearObjective = 1;
+        appleObjective = 3;
+        pearObjective = 3;
         UIManager.Instance.UpdateObjectiveApples();
         UIManager.Instance.UpdateObjectivePears();
-        Crono.Instance.StartCountdown(75);
+        Crono.Instance.StartCountdown(60);
     }
     private IEnumerator Level4()
     {
@@ -113,11 +113,11 @@ public class GameStateManager : MonoBehaviour
         pearSpawner.canSpawn = true;
         UIManager.Instance.UpdateCollectedApples();
         UIManager.Instance.UpdateCollectedPears();
-        appleObjective = 1;
-        pearObjective = 1;
+        appleObjective = 3;
+        pearObjective = 3;
         UIManager.Instance.UpdateObjectiveApples();
         UIManager.Instance.UpdateObjectivePears();
-        Crono.Instance.StartCountdown(75);
+        Crono.Instance.StartCountdown(45);
     }
     private IEnumerator Victory()
     {
